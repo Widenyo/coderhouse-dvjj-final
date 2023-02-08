@@ -18,12 +18,13 @@ public class HubMovement : MonoBehaviour
 
     private void Schhmovement()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
         float axisX;
         float axisZ;
 
         axisX = Input.GetAxis("Horizontal");
         axisZ = Input.GetAxis("Vertical");
         var direction = new Vector3(axisX, 0, axisZ);
-        transform.position += direction * (speed*Time.deltaTime);
+        rb.AddForce(direction * speed, ForceMode.Acceleration);
     }
 }
