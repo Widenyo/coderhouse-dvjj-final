@@ -25,6 +25,8 @@ public class HubMovement : MonoBehaviour
         axisX = Input.GetAxis("Horizontal");
         axisZ = Input.GetAxis("Vertical");
         var direction = new Vector3(axisX, 0, axisZ);
+        var rotation = new Vector3(0f, Mathf.Atan2(-axisZ, axisX), 0f) * (180 / Mathf.PI);
         rb.AddForce(direction * speed, ForceMode.Acceleration);
+        transform.eulerAngles = rotation;
     }
 }
