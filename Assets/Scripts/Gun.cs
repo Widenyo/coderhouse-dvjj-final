@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject m_bulletPrefab;
@@ -12,7 +13,7 @@ public class Gun : MonoBehaviour
     private bool reloading;
     private float reloadTimeElapsed = 0f;
     private GameObject reloadingTextInstace;
-    // Start is called before the first frame update
+
     void Start()
     {
         reloadTimeElapsed = 0f;
@@ -20,7 +21,6 @@ public class Gun : MonoBehaviour
         reloading = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (reloading)
