@@ -6,6 +6,11 @@ public class HubMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         Schhmovement();

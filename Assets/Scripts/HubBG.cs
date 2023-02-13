@@ -8,13 +8,14 @@ public class HubBG : MonoBehaviour
     [SerializeField] private float m_resetTime;
     private float m_timeElapsed;
     private Vector3 m_startPosition;
-
+    // Start is called before the first frame update
     void Start()
     {
         m_startPosition = transform.position;
         m_timeElapsed = 0f;
     }
 
+    // Update is called once per frame
     void Update()
     {
         if(m_timeElapsed > m_resetTime)
