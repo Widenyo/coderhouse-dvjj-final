@@ -30,6 +30,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().hp -= 1;
+        }
     }
 
 }
