@@ -26,13 +26,13 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().hp -= 1;
+        }
+        else if (collision.gameObject.CompareTag("Platform"))
+        {
+            Destroy(gameObject);
         }
     }
 

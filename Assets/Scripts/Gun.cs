@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
             }
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Transform gunPoint = transform.Find("GunPoint").transform;
             Instantiate(m_bulletPrefab, gunPoint.position, gunPoint.rotation);
@@ -44,7 +44,6 @@ public class Gun : MonoBehaviour
             {
                 reloading = true;
                 reloadingTextInstace = Instantiate(m_reloadingText);
-                reloadingTextInstace.transform.SetParent(null);
             }
         }
     }

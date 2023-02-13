@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         hp = m_maxHp;
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player_main");
     }
 
 
@@ -94,13 +94,13 @@ public class Enemy : MonoBehaviour
 
     private void Shoot()
     {
+        Transform gunPoint = transform.Find("GunPoint").transform;
         m_shootTimeElapsed += Time.deltaTime;
         Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+        gunPoint.rotation = Quaternion.Lerp(gunPoint.rotation, newRotation, rotationSpeed * Time.deltaTime);
         if (m_shootTimeElapsed >= m_shootCd)
         {
-            Transform gunPoint = transform.Find("GunPoint").transform;
-            Instantiate(m_bulletPrefab, gunPoint.position, transform.rotation);
+            Instantiate(m_bulletPrefab, gunPoint.position, gunPoint.rotation);
             m_shootTimeElapsed = 0f;
         }
 
