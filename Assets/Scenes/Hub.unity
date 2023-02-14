@@ -220,7 +220,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &130099495
 MonoBehaviour:
@@ -661,7 +661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &457720972
 GameObject:
@@ -1039,7 +1039,7 @@ Transform:
   m_Children:
   - {fileID: 2108603486}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &827805393
 PrefabInstance:
@@ -2263,6 +2263,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &1801478607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1951809421220256109, guid: 8fd17581a3419a349a7c9bfe7b065e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 475341414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1870221773
 GameObject:
   m_ObjectHideFlags: 0
