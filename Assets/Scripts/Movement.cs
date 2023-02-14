@@ -29,6 +29,16 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector3.up * axisY, ForceMode.Acceleration);
             canJump = false;
         }
+
+        if(axisX < 0)
+        {
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
+
     }
 
     private void OnCollisionEnter(Collision other)

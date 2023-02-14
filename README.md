@@ -1,6 +1,6 @@
-Proyecto Final
+<h1>Proyecto Final</h1>
 
-Integrantes: Santiago Lima & Emiliano Arancio
+<h2>Integrantes: Santiago Lima & Emiliano Arancio</h2>
 
 Idea General: Juego de Accion 2D con ligeros elementos de Plataformas y Exploracion. Controlamos al Protagonista a traves de "Areas", niveles que hacen referencia
  a distintos videojuegos. Al final de cada Area, el jugador debera enfrentarse a un Jefe de la tematica de su Area. En cada Area hay una Habilidad oculta para desbloquear,
@@ -10,5 +10,5 @@ Mecanicas: El jugador puede moverse en un dos dimensiones aunque el juego (Y alg
  SS esta reservado para Habilidades y el CC esta reservado para Cheats. Las Habilidades son herramientas desbloqueables que le otorgan al jugador Parries, nuevos Ataques,
  etc. Los Cheats se desbloquean con los Cheat Codes y son como los "Truquitos" de los juegos viejos (Vease Gamesharks, Game Genies) excepto que vienen con limitantes y
  que, a fines practicos, sirven mas como las Habilidades en un Metroidvania (Son herramientas necesarias para superar obstaculos en Areas posteriores) que como un
- Cheat Code real. Para que el Proyecto sea realizable en el plazo estipulado, las Areas son cortas, consisas y lineales, con pequeñas desviaciones de la ruta principal
+ Cheat Code real. Para que el Proyecto sea realizable en el plazo estipulado, las Areas son cortas, concisas y lineales, con pequeñas desviaciones de la ruta principal
  reservadas para opcionales como las previamente mencionadas Habilidades.
