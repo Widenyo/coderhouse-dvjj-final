@@ -10,7 +10,7 @@ public class ReloadingText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInstance = GameObject.Find("Player");
+        playerInstance = GameObject.Find("Player_main");
     }
 
     // Update is called once per frame

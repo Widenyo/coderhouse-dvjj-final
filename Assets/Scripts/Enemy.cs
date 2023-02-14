@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private State state = State.Idle;
     [SerializeField] private float m_timeToHeal = 5.0f;
     private float timeElapsedToHeal;
-    private float rotationSpeed = 2.0f;
+    //private float rotationSpeed = 2.0f;
     private float speed = 6.0f;
     [SerializeField] private GameObject m_bulletPrefab;
     private GameObject player;
@@ -96,11 +96,21 @@ public class Enemy : MonoBehaviour
     {
         Transform gunPoint = transform.Find("GunPoint").transform;
         m_shootTimeElapsed += Time.deltaTime;
-        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        gunPoint.rotation = Quaternion.Lerp(gunPoint.rotation, newRotation, rotationSpeed * Time.deltaTime);
+        //Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+
+        if(transform.position.x < player.transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+
         if (m_shootTimeElapsed >= m_shootCd)
         {
-            Instantiate(m_bulletPrefab, gunPoint.position, gunPoint.rotation);
+            Instantiate(m_bulletPrefab, gunPoint.position, transform.rotation);
             m_shootTimeElapsed = 0f;
         }
 
