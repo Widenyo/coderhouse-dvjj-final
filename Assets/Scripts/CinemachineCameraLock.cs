@@ -16,7 +16,7 @@ public class LockCameraZ : CinemachineExtension
         CinemachineVirtualCameraBase vcam,
         CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        if (stage == CinemachineCore.Stage.Body)
+        if (stage == CinemachineCore.Stage.Finalize)
         {
             var pos = state.RawPosition;
             pos.z = m_ZPosition;

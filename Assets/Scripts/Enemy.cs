@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour
     private void Escape()
     {
         Vector3 vectorToPlayer = player.transform.position - transform.position;
-        transform.position -= new Vector3(vectorToPlayer.normalized.x, 0f, vectorToPlayer.normalized.z) * (speed * Time.deltaTime);
+        transform.position -= new Vector3(vectorToPlayer.normalized.x, 0f, 0f) * (speed * Time.deltaTime);
     }
 
     private void Dead()
