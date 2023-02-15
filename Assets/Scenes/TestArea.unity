@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_main
       objectReference: {fileID: 0}
+    - target: {fileID: 6393157124885449289, guid: 8c964fa525af70b4f9950cf0d867bbc7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6393157124885449308, guid: 8c964fa525af70b4f9950cf0d867bbc7,
         type: 3}
       propertyPath: m_RootOrder
@@ -929,6 +934,20 @@ MonoBehaviour:
   m_reloadTime: 2
   m_reloadingText: {fileID: 3442363142764175925, guid: f53424d3123cd694d92efa80f2ca4e0c,
     type: 3}
+--- !u!114 &1915418171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915418163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f6be7f6e61efc4ca512cd3e60628d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 12
+  lungeForce: 30
 --- !u!1 &2037758458
 GameObject:
   m_ObjectHideFlags: 0

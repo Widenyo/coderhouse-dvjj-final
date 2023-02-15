@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     [SerializeField] private float m_shootCd = 1.5f;
     [SerializeField] private float m_shootTimeElapsed = 0f;
+    [SerializeField] private float rayDistance = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -94,12 +95,8 @@ public class Enemy : MonoBehaviour
 
     private void Shoot()
     {
-        Transform gunPoint = transform.Find("GunPoint").transform;
-        m_shootTimeElapsed += Time.deltaTime;
-        //Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
 
-        if(transform.position.x < player.transform.position.x)
+        if (transform.position.x < player.transform.position.x)
         {
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
@@ -108,11 +105,23 @@ public class Enemy : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
 
-        if (m_shootTimeElapsed >= m_shootCd)
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, transform.right);
+
+        if (Physics.Raycast(ray, out hit) && hit.distance < rayDistance && hit.transform.CompareTag("Player"))
         {
-            Instantiate(m_bulletPrefab, gunPoint.position, transform.rotation);
-            m_shootTimeElapsed = 0f;
+            Transform gunPoint = transform.Find("GunPoint").transform;
+            m_shootTimeElapsed += Time.deltaTime;
+            //Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
+            if (m_shootTimeElapsed >= m_shootCd)
+            {
+                Instantiate(m_bulletPrefab, gunPoint.position, transform.rotation);
+                m_shootTimeElapsed = 0f;
+            }
         }
+
+
 
     }
 
