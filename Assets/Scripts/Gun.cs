@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
             }
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(1))
         {
             Transform gunPoint = transform.Find("GunPoint").transform;
             Instantiate(m_bulletPrefab, gunPoint.position, gunPoint.rotation);

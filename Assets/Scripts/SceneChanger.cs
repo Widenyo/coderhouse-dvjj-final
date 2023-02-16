@@ -5,10 +5,20 @@ using UnityEngine;
 
 public class SceneChanger : MonoBehaviour
 {
-    public string sceneName = "TestArea";
+    public string sceneName;
+    private string thisScene;
 
     void OnCollisionEnter(Collision other)
     {
-        SceneManager.LoadScene(sceneName);
+        if (thisScene == "In-Between")
+        {
+            SceneManager.LoadSceneAsync(sceneName);
+            thisScene = sceneName;
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+            thisScene = sceneName;
+        }
     }
 }

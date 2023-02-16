@@ -7,16 +7,15 @@ public class PlayerRaycast : MonoBehaviour
     Rigidbody m_Rigidbody;
     [SerializeField] private float rayDistance = 12f;
     [SerializeField] private float lungeForce = 30f;
-    // Start is called before the first frame update
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.E) && Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
         {
             RaycastHit hit;
             Ray ray = new Ray(transform.position, transform.right);
