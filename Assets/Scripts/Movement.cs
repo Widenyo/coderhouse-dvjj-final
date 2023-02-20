@@ -11,24 +11,16 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Schhmovin();
+        checkFall();
     }
 
     void Schhmovin()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
+
         float axisX;
-        float axisY;
 
         axisX = Input.GetAxis("Horizontal");
-        axisY = jumpHeight;
-
-        var direction = new Vector3(axisX, 0, 0);
-        rb.AddForce(direction * speed, ForceMode.Acceleration);
-        if (canJump && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector3.up * axisY, ForceMode.Acceleration);
-            canJump = false;
-        }
 
         if(axisX < 0)
         {
@@ -39,6 +31,24 @@ public class Movement : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
 
+        Vector3 movement = new Vector3(axisX, 0f, 0f) * speed * Time.deltaTime;
+        transform.position += movement;
+
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            canJump = false;
+        }
+
+
+    }
+
+    private void checkFall()
+    {
+        if(transform.position.y < -20f)
+        {
+            transform.position = new Vector3(0f, 10f, 0f);
+        }
     }
 
     private void OnCollisionEnter(Collision other)

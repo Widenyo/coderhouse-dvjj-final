@@ -894,6 +894,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1915418171, guid: 8c964fa525af70b4f9950cf0d867bbc7, type: 3}
+      propertyPath: lungeForce
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 2094269773, guid: 8c964fa525af70b4f9950cf0d867bbc7, type: 3}
       propertyPath: styleToAdd
       value: 5
@@ -948,15 +952,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6393157124885449280, guid: 8c964fa525af70b4f9950cf0d867bbc7,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393157124885449280, guid: 8c964fa525af70b4f9950cf0d867bbc7,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6393157124885449287, guid: 8c964fa525af70b4f9950cf0d867bbc7,
         type: 3}
       propertyPath: speed
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6393157124885449287, guid: 8c964fa525af70b4f9950cf0d867bbc7,
         type: 3}
       propertyPath: jumpHeight
-      value: 1000
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6393157124885449289, guid: 8c964fa525af70b4f9950cf0d867bbc7,
         type: 3}
