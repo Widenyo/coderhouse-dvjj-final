@@ -530,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   jumpHeight: 1000
+  m_maxHealth: 0
 --- !u!114 &1915418170
 MonoBehaviour:
   m_ObjectHideFlags: 0
