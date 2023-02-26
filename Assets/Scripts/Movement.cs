@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class Savekeys
 {
@@ -15,6 +17,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private int m_maxHealth;
     public int m_currentHealth;
     private bool canJump;
+    private GameObject stageCamera;
 
     void SaveData()
     {
@@ -32,7 +35,9 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
+        stageCamera = GameObject.Find("Stage Camera");
         m_currentHealth = m_maxHealth;
+        updateHPUI();
     }
 
     void Update()
@@ -50,9 +55,10 @@ public class Movement : MonoBehaviour
         }
     }
 
-    [ContextMenu ("Receive Damage")] void TakeDamage()
+    [ContextMenu ("Receive Damage")] public void TakeDamage()
     {
         m_currentHealth -= 1;
+        updateHPUI();
     }
 
     void Schhmovin()
@@ -98,5 +104,11 @@ public class Movement : MonoBehaviour
         {
             canJump = true;
         }
+    }
+
+    private void updateHPUI()
+    {
+        TextMeshProUGUI textReference = stageCamera.transform.Find("Canvas").Find("HP").Find("var").gameObject.GetComponent<TextMeshProUGUI>();
+        textReference.text = m_currentHealth.ToString();
     }
 }
