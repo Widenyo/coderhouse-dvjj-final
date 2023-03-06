@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4145088467285595468}
   - component: {fileID: 2094269772}
-  - component: {fileID: 2094269773}
+  - component: {fileID: 1088510719}
   m_Layer: 0
   m_Name: Katana
   m_TagString: Untagged
@@ -170,7 +170,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2094269773
+--- !u!114 &1088510719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,10 +179,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5471270488228498022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f299fe23f1f253419852fea10e4cbff, type: 3}
+  m_Script: {fileID: 11500000, guid: 195508ebe2daa2240b59289915821479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2094269772}
+  styleToAdd: 2
+  style: 0
 --- !u!1 &5495623664992578833
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,11 +493,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 4
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 2
 --- !u!114 &6393157124885449287
 MonoBehaviour:
@@ -509,9 +511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10160d6e4c47fb045b8201b2745d5727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  jumpHeight: 1000
-  m_maxHealth: 0
+  speed: 10
+  jumpHeight: 26
+  m_maxHealth: 6
   m_currentHealth: 0
 --- !u!114 &1915418170
 MonoBehaviour:
@@ -545,4 +547,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 12
-  lungeForce: 30
+  lungeForce: 36

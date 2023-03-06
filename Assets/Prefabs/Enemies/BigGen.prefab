@@ -132,15 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4fb47a41b215b458ab2f974e138adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHp: 10
+  m_enemyData: {fileID: 11400000, guid: 9c905b248bce54a4b822f84d7bebc776, type: 2}
   hp: 10
   state: 0
-  m_timeToHeal: 5
   m_bulletPrefab: {fileID: 3483179794651359252, guid: d3570c36a7b3a134184b0f8a5d2620a3,
     type: 3}
-  m_shootCd: 1.5
-  m_shootTimeElapsed: 0
-  rayDistance: 20
 --- !u!65 &9187060965533358218
 BoxCollider:
   m_ObjectHideFlags: 0

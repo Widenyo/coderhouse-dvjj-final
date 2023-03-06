@@ -12,22 +12,23 @@ public class Enemy : MonoBehaviour
         Escape,
         Dead
     }
-    [SerializeField] private int m_maxHp = 10;
+    [SerializeField] private EnemyData m_enemyData;
     public int hp;
     [SerializeField] private State state = State.Idle;
-    [SerializeField] private float m_timeToHeal = 5.0f;
     private float timeElapsedToHeal;
-    //private float rotationSpeed = 2.0f;
-    private float speed = 6.0f;
     [SerializeField] private GameObject m_bulletPrefab;
     private GameObject player;
-    [SerializeField] private float m_shootCd = 1.5f;
-    [SerializeField] private float m_shootTimeElapsed = 0f;
-    [SerializeField] private float rayDistance = 20f;
+    private float m_shootTimeElapsed = 0f;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
-        hp = m_maxHp;
+        hp = m_enemyData.getLife;
         player = GameObject.Find("Player_main");
     }
 
@@ -82,10 +83,10 @@ public class Enemy : MonoBehaviour
 
     private void Idle()
     {
-        if (m_maxHp != hp)
+        if (m_enemyData.getLife != hp)
         {
             timeElapsedToHeal += Time.deltaTime;
-            if (timeElapsedToHeal >= m_timeToHeal)
+            if (timeElapsedToHeal >= m_enemyData.getTimeToHeal)
             {
                 timeElapsedToHeal = 0f;
                 hp += 1;
@@ -108,13 +109,13 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(transform.position, transform.right);
 
-        if (Physics.Raycast(ray, out hit) && hit.distance < rayDistance && hit.transform.CompareTag("Player"))
+        if (Physics.Raycast(ray, out hit) && hit.distance < m_enemyData.getRayDistance && hit.transform.CompareTag("Player"))
         {
             Transform gunPoint = transform.Find("GunPoint").transform;
             m_shootTimeElapsed += Time.deltaTime;
             //Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
             //transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
-            if (m_shootTimeElapsed >= m_shootCd)
+            if (m_shootTimeElapsed >= m_enemyData.getShootCd)
             {
                 Instantiate(m_bulletPrefab, gunPoint.position, transform.rotation);
                 m_shootTimeElapsed = 0f;
@@ -128,7 +129,7 @@ public class Enemy : MonoBehaviour
     private void Escape()
     {
         Vector3 vectorToPlayer = player.transform.position - transform.position;
-        transform.position -= new Vector3(vectorToPlayer.normalized.x, 0f, 0f) * (speed * Time.deltaTime);
+        transform.position -= new Vector3(vectorToPlayer.normalized.x, 0f, 0f) * (m_enemyData.getSpeed * Time.deltaTime);
     }
 
     private void Dead()
