@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Movement>().TakeDamage();
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage();
         }
         //Al colisionar, se destruye si o si.
         Destroy(gameObject);

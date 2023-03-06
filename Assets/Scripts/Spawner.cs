@@ -5,18 +5,20 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     //[SerializeField] private float m_rotationSpeed = 50f;
-    [SerializeField] private GameObject[] m_enemiesToSpawn;
+    [SerializeField] private List<Enemy_Class> m_enemiesToSpawn;
     [SerializeField] private Transform m_spawnPoint;
-    // Start is called before the first frame update
+
     void Start()
     {
-        foreach(GameObject enemy in m_enemiesToSpawn)
-        {
-            Instantiate(enemy, m_spawnPoint);
-        }
+        //foreach(GameObject enemy in m_enemiesToSpawn)
+        //{
+        //    Instantiate(enemy, m_spawnPoint);
+        //}
+
+        Enemy_Class enemyToInstantiate = m_enemiesToSpawn[Random.Range(0, m_enemiesToSpawn.Count)];
+        Enemy_Class instantiated = Instantiate(enemyToInstantiate, m_spawnPoint);
     }
 
-    // Update is called once per frame
     void Update()
     {
 

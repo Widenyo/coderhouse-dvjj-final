@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 926275611470859945}
+  - component: {fileID: 1924421602168694070}
   m_Layer: 0
   m_Name: GenericEnemy
   m_TagString: Enemy
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924421602168694070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515183161623626221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4a9213a9dc38440aaaea0d183673a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name_ID: Normal
 --- !u!1 &6682376505597406198
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,14 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyData: {fileID: 11400000, guid: 9c905b248bce54a4b822f84d7bebc776, type: 2}
-  m_maxHp: 10
   hp: 10
   state: 0
-  m_timeToHeal: 5
   m_bulletPrefab: {fileID: 3483179794651359252, guid: d3570c36a7b3a134184b0f8a5d2620a3,
     type: 3}
-  m_shootCd: 1.5
-  rayDistance: 20
 --- !u!65 &4298561459704861997
 BoxCollider:
   m_ObjectHideFlags: 0
