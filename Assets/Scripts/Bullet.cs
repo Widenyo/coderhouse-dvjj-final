@@ -27,6 +27,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().hp -= 1;
+            GameManager.instance.AddStyle(1f);
+            Debug.Log("Bullet updating style in UI");
         }
         else if (collision.gameObject.CompareTag("Player"))
         {

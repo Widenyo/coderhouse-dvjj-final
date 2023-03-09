@@ -56,8 +56,8 @@ public class Gun : MonoBehaviour
 
     private void updateAmmoUI()
     {
-        TextMeshProUGUI textReference = stageCamera.transform.Find("Canvas").Find("Ammo").Find("var").gameObject.GetComponent<TextMeshProUGUI>();
-        textReference.text = clip.ToString();
+        Debug.Log("Gun updating ammo");
+        UIManager.UpdateAmmo(clip, m_clipSize);
     }
 
 }

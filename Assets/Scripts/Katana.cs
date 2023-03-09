@@ -19,6 +19,7 @@ public class Katana : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             GameManager.instance.AddStyle(styleToAdd);
+            Debug.Log("Katana updating style in UI");
         }
     }
 

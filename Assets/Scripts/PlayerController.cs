@@ -37,7 +37,7 @@ public class PlayerController : Player_Class
     {
         stageCamera = GameObject.Find("Stage Camera");
         m_currentHealth = m_maxHealth;
-        updateHPUI();
+        UIManager.UpdateHP(m_currentHealth, m_maxHealth);
     }
 
     void Update()
@@ -58,7 +58,8 @@ public class PlayerController : Player_Class
     [ContextMenu ("Receive Damage")] public void TakeDamage()
     {
         m_currentHealth -= 1;
-        updateHPUI();
+        UIManager.UpdateHP(m_currentHealth, m_maxHealth);
+        GameManager.instance.DecreaseStyle(5f);
     }
 
     void Schhmovin()
@@ -95,6 +96,8 @@ public class PlayerController : Player_Class
         if(transform.position.y < -20f)
         {
             transform.position = new Vector3(0f, 10f, 0f);
+            Debug.Log("Player died, resetting style in UI");
+            GameManager.instance.ResetStyle();
         }
     }
 
@@ -104,11 +107,5 @@ public class PlayerController : Player_Class
         {
             canJump = true;
         }
-    }
-
-    private void updateHPUI()
-    {
-        TextMeshProUGUI textReference = stageCamera.transform.Find("Canvas").Find("HP").Find("var").gameObject.GetComponent<TextMeshProUGUI>();
-        textReference.text = m_currentHealth.ToString();
     }
 }
