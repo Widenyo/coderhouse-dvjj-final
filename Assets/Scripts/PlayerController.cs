@@ -80,7 +80,7 @@ public class PlayerController : Player_Class
         }
 
         Vector3 movement = new Vector3(axisX, 0f, 0f) * speed * Time.deltaTime;
-        transform.position += movement;
+        rb.MovePosition(transform.position + movement);
 
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {

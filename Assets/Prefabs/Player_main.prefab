@@ -496,9 +496,9 @@ Rigidbody:
   m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 120
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!114 &1915418170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,6 +546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_ID: Player
   speed: 15
-  jumpHeight: 25
+  jumpHeight: 13
   m_maxHealth: 10
   m_currentHealth: 0
